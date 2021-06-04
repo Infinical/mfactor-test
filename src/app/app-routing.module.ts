@@ -18,6 +18,10 @@ const routes: Routes = [
     loadChildren: () =>
       import('./auth/auth.module').then((m) => m.AuthPageModule),
   },
+  {
+    path: 'desktop',
+    loadChildren: () => import('./desktop/desktop.module').then( m => m.DesktopPageModule)
+  },
 ];
 
 @NgModule({
