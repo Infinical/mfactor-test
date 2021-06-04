@@ -11,7 +11,7 @@ import { AuthService } from '../auth.service';
 export class LoginPage implements OnInit {
   loginForm = this.fb.group({
     email: ['dev1@gmail.com', Validators.required],
-    password: ['password123!“”', Validators.required],
+    password: ['password123!', Validators.required],
   });
 
   constructor(
@@ -24,8 +24,8 @@ export class LoginPage implements OnInit {
 
   login() {
     const payload = {
-      email: this.loginForm.value.email,
-      password: this.loginForm.value.password,
+      Username: this.loginForm.value.email,
+      Password: this.loginForm.value.password,
     };
 
     this.auth.login(payload).subscribe((data) => {
