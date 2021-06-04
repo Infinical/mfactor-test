@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -13,7 +14,11 @@ export class LoginPage implements OnInit {
     password: ['password123!“”', Validators.required],
   });
 
-  constructor(private fb: FormBuilder, private auth: AuthService) {}
+  constructor(
+    private fb: FormBuilder,
+    private auth: AuthService,
+    private router: Router
+  ) {}
 
   ngOnInit() {}
 
@@ -24,7 +29,8 @@ export class LoginPage implements OnInit {
     };
 
     this.auth.login(payload).subscribe((data) => {
-      console.log(data);
+      this.router.navigate(['/home']);
+      // console.log(data);
     });
   }
 }

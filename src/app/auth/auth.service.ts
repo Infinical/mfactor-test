@@ -7,6 +7,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class AuthService {
+  isLoggedin = false;
   constructor(private http: HttpClient) {}
 
   login(payload) {
