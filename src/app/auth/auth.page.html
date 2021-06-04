@@ -1,11 +1,18 @@
-<ion-tabs>
-  <!-- Tab bar -->
-  <ion-tab-bar slot="top">
-    <ion-tab-button tab="login">
-      <ion-label>LOGIN</ion-label>
-    </ion-tab-button>
-    <ion-tab-button tab="signup">
-      <ion-label>SIGNUP</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
-</ion-tabs>
+<!-- <ion-header>
+  <div class="image">
+    <img src="assets/logo.png" alt="" />
+  </div>
+</ion-header> -->
+
+<div class="tabs">
+  <ion-tabs #tabs (ionTabsDidChange)="setCurrentTab()">
+    <ion-tab-bar mode="md" slot="top" selectedTab="{{this.selectedTab}}">
+      <ion-tab-button tab="login">
+        <ion-label>Log In</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="signup">
+        <ion-label>Sign Up</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</div>

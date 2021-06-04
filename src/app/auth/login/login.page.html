@@ -1,0 +1,41 @@
+<ion-content class="ion-padding-top">
+  <div [formGroup]="loginForm">
+    <ion-item class="ion-padding-top">
+      <ion-label position="floating">Name/Email Address</ion-label>
+      <ion-input formControlName="email" type="email"></ion-input>
+    </ion-item>
+
+    <ion-item class="ion-padding-top">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input formControlName="password" type="password"></ion-input>
+    </ion-item>
+  </div>
+
+  <ion-row class="ion-padding-top ion-justify-content-between">
+    <ion-col size="5" class="ion-float-left">
+      <span>
+        <ion-checkbox mode="ios" slot="start"></ion-checkbox>
+        <ion-label class="helper">Remember me</ion-label>
+      </span>
+    </ion-col>
+    <ion-col size="3.5" class="ion-float-right">
+      <ion-label class="helper">Forgot Password?</ion-label>
+    </ion-col>
+  </ion-row>
+
+  <ion-button
+    class="login"
+    color="primary"
+    (click)="login()"
+    [disabled]="this.loginForm.invalid"
+    >Log In</ion-button
+  >
+
+  <div class="ion-text-center">
+    <h5 class="orlogin">Or Login with</h5>
+  </div>
+
+  <p class="terms">
+    By creating an account you agree to Sarathi User terms and conditions
+  </p>
+</ion-content>

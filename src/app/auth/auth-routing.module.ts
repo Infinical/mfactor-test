@@ -6,12 +6,25 @@ import { AuthPage } from './auth.page';
 const routes: Routes = [
   {
     path: '',
-    component: AuthPage
+    component: AuthPage,
+    children: [
+      {
+        path: '',
+        redirectTo: '/auth/login',
+        pathMatch: 'full',
+      },
+      {
+        path: 'login',
+        loadChildren: () =>
+          import('./login/login.module').then((m) => m.LoginPageModule),
+      },
+      {
+        path: 'signup',
+        loadChildren: () =>
+          import('./signup/signup.module').then((m) => m.SignupPageModule),
+      },
+    ],
   },
-  {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  }
 ];
 
 @NgModule({
