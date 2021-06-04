@@ -25,7 +25,8 @@ export class AppInterceptor implements HttpInterceptor {
       return next.handle(request).pipe(
         map((event: HttpEvent<any>) => {
           if (event instanceof HttpResponse) {
-            sessionStorage.setItem('token', event.headers.get('Auth'));
+            console.log(event.body.token);
+            sessionStorage.setItem('token', event.body.token);
             this.auth.isLoggedin = true;
           }
           return event;
@@ -34,14 +35,14 @@ export class AppInterceptor implements HttpInterceptor {
     }
 
     const req1 = request.clone({
-      headers: request.headers.set('Auth', `${token}`),
+      headers: request.headers.set('Authorization', `${token}`),
     });
 
     return next.handle(req1).pipe(
       map((event: HttpEvent<any>) => {
         if (event instanceof HttpResponse) {
-          if (event.headers.get('Auth') !== null) {
-            sessionStorage.setItem('token', event.headers.get('Auth'));
+          if (event.body.token !== null) {
+            sessionStorage.setItem('token', event.body.token);
           }
         }
         return event;
