@@ -3,22 +3,18 @@
   height: 25vh;
   border-radius: 0vh 0vh 10vh 10vh;
   position: relative;
-  padding-top: 2vh;
-  padding-left: 4vw;
 }
 
 .middle {
   background-color: #643e34;
   position: relative;
-  top: -15%;
+  top: -5%;
   width: 80%;
-
   margin: 0 auto;
   border-radius: 30px 30px 30px 30px;
 }
 
 .bottom {
-  margin-top: 15vh;
   height: 75vh;
 }
 
@@ -34,19 +30,6 @@
   margin-top: 1.4vh;
 }
 
-ion-card {
-  background-color: white;
-  border-radius: 2vh;
-}
-
-.img {
-  border-radius: 2vh;
-  width: 100%;
-  height: 12vh;
-  padding: 0 !important;
-  object-fit: cover;
-}
-
 .welcome {
   font-size: 1.5vh;
   font-weight: bold;
@@ -59,6 +42,11 @@ ion-card {
   font-weight: bold;
   color: white;
   letter-spacing: 0.05rem;
+}
+
+.profile {
+  width: 100%;
+  height: auto;
 }
 
 .total {
@@ -85,25 +73,6 @@ ion-card {
   padding-left: 2vw;
 }
 
-.vendors {
-  color: #643e34;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-.distance {
-  color: #f5921d;
-  font-weight: bold;
-}
-
-ion-card-content {
-  padding: 0 !important;
-}
-
-.img-col {
-  padding: 0 !important;
-}
-
 .divider {
   border-left: grey 0.2vh solid;
   height: 90%;
@@ -111,11 +80,30 @@ ion-card-content {
   left: -10%;
 }
 
-.direction {
-  width: 28vw;
+ion-card {
+  background-color: white;
+  border-radius: 5vh;
+  height: 14vh;
 }
 
-.profile {
-  width: 100%;
+.responsive {
+  max-width: 100%;
   height: auto;
+  border-radius: 5vh;
+}
+
+.vendors {
+  color: #643e34;
+  font-size: 2vh;
+  font-weight: bold;
+}
+
+.distance {
+  color: #f5921d;
+  font-size: 1.5vh;
+  font-weight: bold;
+}
+
+.direction {
+  float: right;
 }

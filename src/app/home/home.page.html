@@ -1,7 +1,7 @@
 <ion-content>
   <ion-grid>
     <ion-row class="ion-justify-content-center">
-      <ion-col sizeSm="6" size="12" fixed>
+      <ion-col sizeSm="6" size="12" fixed class="ion-no-padding">
         <div class="top">
           <ion-row>
             <ion-col size="2.5">
@@ -31,7 +31,7 @@
           </ion-row>
         </div>
 
-        <!-- <div class="bottom">
+        <div class="bottom">
           <ion-row>
             <ion-col>
               <h3 class="hungry">Feeling Hungry?</h3>
@@ -41,7 +41,27 @@
             </ion-col>
           </ion-row>
 
-          <ion-col>
+          <ion-card>
+            <ion-row>
+              <ion-col size="3" class="ion-no-padding">
+                <img class="responsive" src="assets/food.jpeg"
+              /></ion-col>
+              <ion-col size="5" class="ion-padding-start">
+                <h3 class="vendors">Vendors Details</h3>
+                <h4 class="distance">400m away</h4>
+              </ion-col>
+              <ion-col size="4" class="ion-align-self-end">
+                <ion-button
+                  shape="round"
+                  color="primary"
+                  class="direction ion-padding-end"
+                  >Direction</ion-button
+                >
+              </ion-col>
+            </ion-row>
+          </ion-card>
+
+          <!-- <ion-col>
             <ion-card>
               <ion-card-content>
                 <ion-row>
@@ -65,8 +85,8 @@
                 </ion-row>
               </ion-card-content>
             </ion-card>
-          </ion-col>
-        </div> -->
+          </ion-col> -->
+        </div>
       </ion-col>
     </ion-row></ion-grid
   >
