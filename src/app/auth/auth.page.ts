@@ -15,6 +15,5 @@ export class AuthPage implements OnInit {
 
   setCurrentTab() {
     this.selectedTab = this.tabs.getSelected();
-    console.log(this.selectedTab);
   }
 }

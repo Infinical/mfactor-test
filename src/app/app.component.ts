@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Platform } from '@ionic/angular';
+import { AuthService } from './auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +9,15 @@ import { Platform } from '@ionic/angular';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(private platform: Platform, private router: Router) {
-    if (this.platform.is('desktop')) {
-      this.router.navigateByUrl('/desktop', { replaceUrl: false });
+  constructor(
+    private platform: Platform,
+    private router: Router,
+    private auth: AuthService
+  ) {
+    if (this.auth.isLoggedin === false) {
+      this.router.navigate(['/auth']);
+    } else if (this.auth.isLoggedin) {
+      this.router.navigate(['/home']);
     }
   }
 }

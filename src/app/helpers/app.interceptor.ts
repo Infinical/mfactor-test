@@ -10,23 +10,23 @@ import {
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { AuthService } from '../auth/auth.service';
+import { ToastController } from '@ionic/angular';
 
 @Injectable()
 export class AppInterceptor implements HttpInterceptor {
-  constructor(private auth: AuthService) {}
+  constructor(private auth: AuthService, private toast: ToastController) {}
 
   intercept(
     request: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
-    const token = sessionStorage.getItem('token');
+    const token = localStorage.getItem('token');
     if (!token) {
       this.auth.isLoggedin = false;
       return next.handle(request).pipe(
         map((event: HttpEvent<any>) => {
           if (event instanceof HttpResponse) {
-            console.log(event.body.token);
-            sessionStorage.setItem('token', event.body.token);
+            localStorage.setItem('token', event.body.token);
             this.auth.isLoggedin = true;
           }
           return event;
@@ -42,7 +42,8 @@ export class AppInterceptor implements HttpInterceptor {
       map((event: HttpEvent<any>) => {
         if (event instanceof HttpResponse) {
           if (event.body.token !== null) {
-            sessionStorage.setItem('token', event.body.token);
+            this.auth.isLoggedin = true;
+            localStorage.setItem('token', event.body.token);
           }
         }
         return event;

@@ -1,41 +1,63 @@
-<ion-content class="ion-padding-top">
-  <div [formGroup]="loginForm">
-    <ion-item class="ion-padding-top">
-      <ion-label position="floating">Name/Email Address</ion-label>
-      <ion-input formControlName="email" type="email"></ion-input>
-    </ion-item>
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col sizeSm="6" size="12" fixed>
+        <div [formGroup]="loginForm">
+          <ion-item class="ion-padding-top">
+            <ion-label position="floating">Name/Email Address</ion-label>
+            <ion-input formControlName="email" type="email"></ion-input>
+          </ion-item>
 
-    <ion-item class="ion-padding-top">
-      <ion-label position="floating">Password</ion-label>
-      <ion-input formControlName="password" type="password"></ion-input>
-    </ion-item>
-  </div>
+          <ion-item class="ion-padding-top">
+            <ion-label position="floating">Password</ion-label>
+            <ion-input
+              formControlName="password"
+              [type]="passwordType"
+              clearOnEdit="false"
+            ></ion-input>
+            <ion-icon
+              [name]="passwordIcon"
+              slot="end"
+              class="passwordIcon"
+              (click)="hideShowPassword()"
+            ></ion-icon>
+          </ion-item>
+        </div>
 
-  <ion-row class="ion-padding-top ion-justify-content-between">
-    <ion-col size="5" class="ion-float-left">
-      <span>
-        <ion-checkbox mode="ios" slot="start"></ion-checkbox>
-        <ion-label class="helper">Remember me</ion-label>
-      </span>
-    </ion-col>
-    <ion-col size="3.5" class="ion-float-right">
-      <ion-label class="helper">Forgot Password?</ion-label>
-    </ion-col>
-  </ion-row>
+        <ion-row class="ion-align-items-start ion-justify-content-between">
+          <ion-col size="auto" class="ion-no-padding ion-no-margin">
+            <ion-item
+              lines="none"
+              class="helper-text ion-text-start ion-no-padding ion-no-margin"
+            >
+              <ion-checkbox mode="ios" slot="start" size="0.5"></ion-checkbox>
+              <ion-label class="helper"> Remember me</ion-label>
+            </ion-item>
+          </ion-col>
+          <ion-col size="auto" class="ion-no-padding ion-no-margin">
+            <ion-item lines="none" href="" class="helper-text">
+              <ion-label class="helper">Forgot Password?</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
 
-  <ion-button
-    class="login"
-    color="primary"
-    (click)="login()"
-    [disabled]="this.loginForm.invalid"
-    >Log In</ion-button
-  >
+        <ion-button
+          class="login"
+          color="primary"
+          (click)="login()"
+          [disabled]="this.loginForm.invalid"
+          >Log In</ion-button
+        >
 
-  <div class="ion-text-center">
-    <h5 class="orlogin">Or Login with</h5>
-  </div>
+        <div class="ion-text-center">
+          <h5 class="orlogin">Or Login with</h5>
+        </div>
+        <ion-item-divider></ion-item-divider>
 
-  <p class="terms">
-    By creating an account you agree to Sarathi User terms and conditions
-  </p>
+        <p class="terms">
+          By creating an account you agree to Sarathi User terms and conditions
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

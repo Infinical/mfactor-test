@@ -15,3 +15,25 @@ ion-label {
 .tabs {
   height: 70vh !important;
 }
+
+ion-tab-button {
+  --color: #d4d4d4;
+  --color-selected: #5a41a0;
+  --padding-bottom: 8px;
+  --padding-top: 8px;
+
+  &::before {
+    background-color: transparent;
+    display: block;
+    content: "";
+    margin: 0 auto;
+    height: 7%;
+    position: relative;
+    top: 90%;
+  }
+
+  &.tab-selected::before {
+    background-color: #653e34;
+    width: 80%;
+  }
+}

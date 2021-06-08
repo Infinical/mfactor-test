@@ -1,7 +1,7 @@
 .top {
   background-color: #f5921d;
   height: 25vh;
-  border-radius: 0px 0px 40px 40px;
+  border-radius: 0vh 0vh 10vh 10vh;
   position: relative;
   padding-top: 2vh;
   padding-left: 4vw;
@@ -9,15 +9,12 @@
 
 .middle {
   background-color: #643e34;
-  position: absolute;
-  top: 17vh;
-  left: 10vw;
+  position: relative;
+  top: -15%;
   width: 80%;
+
+  margin: 0 auto;
   border-radius: 30px 30px 30px 30px;
-  padding-top: 1vh;
-  padding-bottom: 1vh;
-  padding-left: 3vw;
-  padding-right: 3vw;
 }
 
 .bottom {
@@ -51,14 +48,14 @@ ion-card {
 }
 
 .welcome {
-  font-size: 1rem;
+  font-size: 1.5vh;
   font-weight: bold;
   color: white;
   letter-spacing: 0.05rem;
 }
 
 .name {
-  font-size: 2rem;
+  font-size: 3vh;
   font-weight: bold;
   color: white;
   letter-spacing: 0.05rem;
@@ -107,9 +104,11 @@ ion-card-content {
   padding: 0 !important;
 }
 
-.vl {
-  border-left: 1.5px solid #7f6159;
-  height: 10vh;
+.divider {
+  border-left: grey 0.2vh solid;
+  height: 90%;
+  position: relative;
+  left: -10%;
 }
 
 .direction {
@@ -117,6 +116,6 @@ ion-card-content {
 }
 
 .profile {
-  width: 80%;
-  height: 20vh;
+  width: 100%;
+  height: auto;
 }
