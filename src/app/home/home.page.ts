@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { LoadingService } from '../helpers/loading.service';
 import { HomeService } from './home.service';
 
 @Component({
@@ -6,10 +7,19 @@ import { HomeService } from './home.service';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
-  constructor(private home: HomeService) {
+export class HomePage implements OnInit {
+  locations: any = [];
+  constructor(private home: HomeService, public loading: LoadingService) {}
+
+  ngOnInit() {
+    this.getLocations();
+  }
+
+  getLocations() {
+    this.loading.presentLoading();
     this.home.getLocations().subscribe((resp: any) => {
-      console.log(resp);
+      this.locations = resp;
+      this.loading.dismissLoading();
     });
   }
 }

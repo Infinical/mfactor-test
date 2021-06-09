@@ -83,13 +83,19 @@
 ion-card {
   background-color: white;
   border-radius: 5vh;
-  height: 14vh;
+  height: 13%;
 }
 
 .responsive {
-  max-width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
   height: auto;
+  // width: 100%;
+  // height: auto;
   border-radius: 5vh;
+  // background-size: cover;
+  // object-fit: cover;
 }
 
 .vendors {
@@ -107,3 +113,7 @@ ion-card {
 .direction {
   float: right;
 }
+
+// .img-container {
+//   background-color: red;
+// }

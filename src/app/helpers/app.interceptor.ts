@@ -35,7 +35,7 @@ export class AppInterceptor implements HttpInterceptor {
     }
 
     const req1 = request.clone({
-      headers: request.headers.set('Authorization', `${token}`),
+      headers: request.headers.set('Authorization', `Bearer ${token}`),
     });
 
     return next.handle(req1).pipe(
