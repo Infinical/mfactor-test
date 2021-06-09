@@ -14,6 +14,7 @@ export class AppComponent {
     private router: Router,
     private auth: AuthService
   ) {
+    console.log(this.auth.isLoggedIn());
     if (this.auth.isLoggedIn) {
       this.router.navigate(['/home']);
     } else {

@@ -1,5 +1,5 @@
 img {
-  width: 50%;
+  width: 100%;
   height: 5vh;
 }
 
@@ -10,10 +10,15 @@ ion-label {
 }
 
 .image {
-  height: 20vh !important;
+  height: 5vh;
+  width: 20%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .tabs {
   height: 70vh !important;
+  margin-top: 10%;
 }
 
 ion-tab-button {
@@ -36,4 +41,9 @@ ion-tab-button {
     background-color: #653e34;
     width: 80%;
   }
+}
+
+ion-header {
+  margin-bottom: 10%;
+  margin-top: 10%;
 }

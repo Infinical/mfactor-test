@@ -7,11 +7,9 @@ import { HomeService } from './home.service';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage implements OnInit {
+export class HomePage {
   locations: any = [];
-  constructor(private home: HomeService, public loading: LoadingService) {}
-
-  ngOnInit() {
+  constructor(private home: HomeService, public loading: LoadingService) {
     this.getLocations();
   }
 
