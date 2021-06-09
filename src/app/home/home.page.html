@@ -41,25 +41,22 @@
             </ion-col>
           </ion-row>
 
-          <ion-card *ngFor="let location of locations">
+          <div class="card" *ngFor="let location of locations">
             <ion-row>
-              <ion-col size="3" class="ion-no-padding img-container">
+              <ion-col class="ion-no-padding img-container">
                 <img class="responsive" src="{{location.image}}"
               /></ion-col>
-              <ion-col size="5" class="ion-padding-start">
+              <ion-col class="ion-padding-start">
                 <h3 class="vendors">{{location.name}}</h3>
                 <h4 class="distance">{{location.distance}}</h4>
               </ion-col>
-              <ion-col size="4" class="ion-align-self-end">
-                <ion-button
-                  shape="round"
-                  color="primary"
-                  class="direction ion-padding-end"
+              <ion-col>
+                <ion-button color="primary" class="direction"
                   >Direction</ion-button
                 >
               </ion-col>
             </ion-row>
-          </ion-card>
+          </div>
 
           <!-- <ion-col>
             <ion-card>

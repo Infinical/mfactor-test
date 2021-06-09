@@ -3,6 +3,7 @@
   height: 25vh;
   border-radius: 0vh 0vh 10vh 10vh;
   position: relative;
+  padding-left: 5%;
 }
 
 .middle {
@@ -80,40 +81,37 @@
   left: -10%;
 }
 
-ion-card {
+.card {
   background-color: white;
-  border-radius: 5vh;
-  height: 13%;
+  border-radius: 4vh;
+  margin-top: 4%;
+  margin-bottom: 1%;
 }
 
 .responsive {
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
+  width: 100%;
   height: auto;
-  // width: 100%;
-  // height: auto;
-  border-radius: 5vh;
-  // background-size: cover;
-  // object-fit: cover;
+  border-radius: 4vh;
+  object-fit: cover !important;
 }
 
 .vendors {
   color: #643e34;
-  font-size: 2vh;
+  font-size: 120%;
   font-weight: bold;
+  margin-top: 5%;
 }
 
 .distance {
   color: #f5921d;
-  font-size: 1.5vh;
+  font-size: 100%;
   font-weight: bold;
+  margin-top: 5%;
 }
 
 .direction {
   float: right;
+  width: 100%;
+  margin-top: 30%;
+  padding-right: 15%;
 }
-
-// .img-container {
-//   background-color: red;
-// }

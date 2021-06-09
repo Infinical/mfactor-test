@@ -71,7 +71,7 @@ export class ErrorInterceptor implements HttpInterceptor {
             break;
           case this.unauthorized:
             this.router.navigate(['/auth']);
-            this.auth.isLoggedin = false;
+
             this.loading.dismissLoading();
             this.toaster.alertService('Access denied.Please try again later');
 
@@ -84,7 +84,6 @@ export class ErrorInterceptor implements HttpInterceptor {
 
             break;
           case this.forbidden:
-            this.auth.isLoggedin = false;
             this.loading.dismissLoading();
             this.toaster.alertService(
               'Access denied.Login again or contact the system adminsitrator for more info'

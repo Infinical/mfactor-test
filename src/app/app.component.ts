@@ -14,10 +14,10 @@ export class AppComponent {
     private router: Router,
     private auth: AuthService
   ) {
-    if (this.auth.isLoggedin === false) {
-      this.router.navigate(['/auth']);
-    } else if (this.auth.isLoggedin) {
+    if (this.auth.isLoggedIn) {
       this.router.navigate(['/home']);
+    } else {
+      this.router.navigate(['/auth']);
     }
   }
 }
